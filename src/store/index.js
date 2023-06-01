@@ -7,7 +7,7 @@ const counterSlice = createSlice({
     initialState,
     reducers: {
         increment(state, action) {
-            state.counter += action.value
+            state.counter += action.payload
         },
         decrement(state) {
             state.counter--;
@@ -18,6 +18,7 @@ const counterSlice = createSlice({
     }
 })
 const store = configureStore({ reducer: counterSlice.reducer })
+export const countAction = counterSlice.actions;
 // const counterReducer = (state =initialState , action) => {
 //     if (action.type === 'increment') {
 //         return { counter: state.counter + action.value, counterTouch: state.counterTouch }
